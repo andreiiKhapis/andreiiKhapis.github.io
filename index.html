@@ -17,11 +17,102 @@
     </style>
 </head>
   <body>
+    <div id="kwizbot_widget"></div>
+
+<script deffer>
+function getLangCode() {
+  const href = window.location.href;
+	console.log(href, 'getLangCode', href.indexOf("/ua"));
+  if (href.indexOf("/ua") !== -1) {
+    return 'ua';
+  } else if (href.indexOf("/en") !== -1) {
+    return 'en';
+  }
+  return 'ru';
+}
+
+function getTitle() {
+  const href = window.location.href;
+		console.log(href, 'getTitle', href.indexOf("/ua"));
+  if (href.indexOf("/ua") !== -1) {
+    return 'Підтримка';
+  } else if (href.indexOf("/en") !== -1) {
+    return 'Support';
+  }
+  return 'Поддержка';
+}
+
+function getCallout() {
+  const href = window.location.href;
+			console.log(href, 'getCallout', href.indexOf("/ua"));
+  if (href.indexOf("/ua") !== -1) {
+    return 'У вас є питання?';
+  } else if (href.indexOf("/en") !== -1) {
+    return 'Do you have a question?';
+  }
+  return 'У вас есть вопрос?';
+}
+	
+(function (k, w, i, z, b, o, t) {
+  k['KwizbotWidget'] = b;
+  k[b] = k[b] || function () {
+    w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none}</style>');
+    (k[b].q = k[b].q || []).push(arguments)
+  }, k[b].l = 1 * new Date();
+  o = w.createElement(i), t = w.getElementsByTagName(i)[0];
+  o.async = 1;
+  o.src = z;
+  t.parentNode.insertBefore(o, t);
+})(window, document, 'script', 'https://widget.demo.kwizbot.io/kwjs.js', 'kw');
+kw('init', {
+  title: 'Evergreen',
+  bot_id: 119,
+  subtitle: getTitle(),
+  callout: {text: getCallout(),},
+  language_code: getLangCode(),
+  titleImageUrl: "https://static.demo.kwizbot.io/00e5d0894a3e2fe0cf6eb989d78acb99015189a3/evergreen_logo4369229224.png",
+  botAvatarImageUrl: "https://static.demo.kwizbot.io/00e5d0894a3e2fe0cf6eb989d78acb99015189a3/evergreen_logo4369229224.png",
+  widgetButton: {"type": "multi", "position": {"y": "bottom", "x": "right", "offset": 25}},
+  colors: {
+    "device": {"bg": "#FCFCFC", "dot": "#95CBFB", "border": "#188BE4", "container": "#FCFCFC"},
+    "keyboardButton": {
+		"border": "#188BE4", 
+		"bg": "rgb(18 208 163)", 
+		"text": "rgb(255, 255, 255)",
+	},
+    "header": {
+		"bg": "linear-gradient(130deg, rgb(27 158 126), rgb(153 219 193))", 
+		"text": "#ffffff"
+	},
+    "poweredLink": {"color": "#188BE4"},
+    "userInput": {"bg": "#f4f7f9", "border": "#f4f7f9", "text": "#565867"},
+    "sentMessage": {
+		"bg": "rgb(166 203 115)", 
+		"text": "rgb(255, 255, 255)"
+	},
+    "receivedMessage": {
+		"bg": "rgb(228 242 237)", 
+		"text": "rgb(34, 34, 34)"
+	},
+    "inlineKeyboardButton": {
+		"bg": "rgb(18 208 163)",
+		"text": "rgb(255, 255, 255)"
+	},
+  },
+  multi_channel: {
+    button_title: "Contact us",
+    messengers: {
+      viber: "viber://pa?chatURI=kwizbotsalessupport",
+      telegram: "https://t.me/Kwizbotsupport_bot",
+      facebook: "",
+      whatsapp: "https://wa.me/message/LYCHQRR4DVVOB1"
+    }
+  }
+});
+</script>
+
+<style> #kwizbot_widget { position: fixed; z-index: 100001; } #rec319162513 .t190 { bottom: 100px !important; } #kwizbot_widget svg{position: static !important;}</style>
    
-<div id="kwizbot_widget"></div>
-<script>(function getLangCode() { const href = window.location.href; if (href.indexOf("/ua") !== -1) { return 'ua'; } else if (href.indexOf("/en") !== -1) { return 'en'; } return 'ru'; } function getTitle() { const href = window.location.href; if (href.indexOf("/ua") !== -1) { return 'Підтримка'; } else if (href.indexOf("/en") !== -1) { return 'Support'; } return 'Поддержка'; } function getCallout() { const href = window.location.href; if (href.indexOf("/ua") !== -1) { return 'У вас є питання?'; } else if (href.indexOf("/en") !== -1) { return 'Do you have a question?'; } return 'У вас есть вопрос?'; } (function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t); })(window, document, 'script', 'https://widget.demo.kwizbot.io/kwjs.js', 'kw'); kw('init', { title:'Kwizbot', bot_id:107, subtitle: getTitle(), "widgetButton":{"type":"multi","position":{"y":"bottom","x":"right","offset":25}},"multi_channel":{"button_title":"Contact us","messengers":{"viber":"","telegram":"","facebook":"","whatsapp":"https://wa.me/message/LYCHQRR4DVVOB1", callout:{ text: getCallout(), }, language_code: getLangCode(), titleImageUrl: "https://static.kwizbot.evergreen.team/prod-static/img-1.png", botAvatarImageUrl: "https://static.kwizbot.evergreen.team/prod-static/img-1.png", });</script>
-<style> #kwizbot_widget { position: fixed; z-index: 100001; } #rec319162513 .t190 { bottom: 100px !important; }
-</style>
   </body>
 </HTML>
 
